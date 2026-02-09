@@ -29,4 +29,4 @@ client.on('messageCreate', message => {
 });
 
 // Prisijungimas su tikru tokenu
-client.login(token);
+client.login('MTQ3MDM0NjI4ODYxNTc4NDUzMA.GFySl1.xs2FPuFcoNJpU0wSeqY7u2DXMO9eu9VyVMnlrQ');
