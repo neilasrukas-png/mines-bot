@@ -1,9 +1,9 @@
 const { Client, GatewayIntentBits } = require('discord.js');
 
-// Tokenas paimamas iš environment variable Railway (ar tavo lokalaus kompiuterio)
+// Tokenas paimamas iš environment variable Railway
 const token = process.env.DISCORD_TOKEN;
 
-// Prefixas komandoms
+// Komandų prefixas
 const prefix = "!";
 
 const client = new Client({
@@ -14,7 +14,7 @@ const client = new Client({
     ]
 });
 
-// Kai botas prisijungia
+// Įvyksta, kai botas prisijungia
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}`);
 });
@@ -28,5 +28,5 @@ client.on('messageCreate', message => {
     }
 });
 
-// Prisijungimas su tokenu
+// Prisijungimas su tikru tokenu
 client.login(token);
