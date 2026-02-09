@@ -2,9 +2,9 @@
   "name": "Mines-botas",
   "version": "1.0.0",
   "description": "Minimalus Discord botas Node.js",
-  "main": "index.js",
+  "main": "bot.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node bot.js"
   },
   "dependencies": {
     "discord.js": "^14.13.0"
