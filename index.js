@@ -1,32 +1,18 @@
+// Importuojame Discord.js
 const { Client, GatewayIntentBits } = require('discord.js');
 
-// Tokenas paimamas iš environment variable Railway
-const token = process.env.DISCORD_TOKEN;
+// Sukuriame klientą su reikalingais intencija
+const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
-// Komandų prefixas
-const prefix = "!";
+// Čia įrašyk savo bot tokeną (TIK KABUTĖSE)
+const token = "MTQ3MDM0NjI4ODYxNTc4NDUzMA.GFySl1.xs2FPuFcoNJpU0wSeqY7u2DXMO9eu9VyVMnlrQ"
 
-const client = new Client({
-    intents: [
-        GatewayIntentBits.Guilds,
-        GatewayIntentBits.GuildMessages,
-        GatewayIntentBits.MessageContent
-    ]
-});
-
-// Įvyksta, kai botas prisijungia
+// Įvykis, kai botas prisijungia
 client.once('ready', () => {
-    console.log(`Logged in as ${client.user.tag}`);
+    console.log(`Prisijungta kaip ${client.user.tag}!`);
 });
 
-// Paprasta komanda !ping
-client.on('messageCreate', message => {
-    if (message.author.bot) return; // ignoruoti kitus botus
-
-    if (message.content === `${prefix}ping`) {
-        message.channel.send('Pong!');
-    }
+// Prisijungiame prie Discord su tokenu
+client.login(token).catch(err => {
+    console.error("Nepavyko prisijungti, patikrink tokeną:", err);
 });
-
-// Prisijungimas su tikru tokenu
-client.login('MTQ3MDM0NjI4ODYxNTc4NDUzMA.GFySl1.xs2FPuFcoNJpU0wSeqY7u2DXMO9eu9VyVMnlrQ');
